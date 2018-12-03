@@ -7,15 +7,20 @@
 
 function maxChar(str) {
   let stack = {}
+  let mainKey = ''
+  let maxVal = 0
 
   for (letter of str){
     stack[letter] = stack[letter] + 1 || 1
   }
-  let max = { 'mainKey': '', 'maxVal': 0 }
+
   for (key in stack){
-    if (stack[key] > max['maxVal'] ) max = { 'mainKey': key, 'maxVal': stack[key]}
+    if (stack[key] > maxVal ) {
+      maxVal = stack[key]
+      mainKey = key
+    }
   }
-  return max['mainKey']
+  return mainKey
 }
 
 module.exports = maxChar;
