@@ -29,7 +29,6 @@ function anagrams(stringA, stringB) {
     }
     return accumulator
   }, {})
-  console.log(keyA)
   if (Object.keys(keyA).length !== Object.keys(keyB).length){
     result = false
   } else{
